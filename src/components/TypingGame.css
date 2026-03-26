@@ -1,0 +1,224 @@
+.typing-game {
+  position: relative;
+  min-height: 100vh;
+  padding: 1.25rem 1.5rem 2rem;
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.typing-game__header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 36rem) {
+  .typing-game__header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.typing-game__back {
+  font-size: 1.15rem;
+  align-self: flex-start;
+}
+
+.typing-game__stage-title {
+  font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+  flex: 1;
+}
+
+@media (min-width: 36rem) {
+  .typing-game__stage-title {
+    text-align: right;
+    order: 2;
+  }
+
+  .typing-game__back {
+    order: 1;
+  }
+}
+
+.typing-game__session-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin: 0 0 0.75rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  background: var(--surface);
+}
+
+.typing-game__session-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.typing-game__session-num {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.typing-game__key-hint {
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  line-height: 1.45;
+  color: var(--text);
+  background: rgba(59, 130, 246, 0.08);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  margin: 0 0 1rem;
+}
+
+.typing-game__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.typing-game__progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 12rem;
+}
+
+.typing-game__progress-label {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.typing-game__progress-track {
+  flex: 1;
+  max-width: none;
+  height: 1rem;
+  border-radius: 999px;
+  background: var(--track);
+  overflow: hidden;
+  border: 2px solid var(--border);
+}
+
+.typing-game__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+.typing-game__progress-num {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+  min-width: 3.5ch;
+  text-align: right;
+}
+
+.typing-game__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.typing-game__action-btn {
+  font-size: 1.15rem;
+  padding: 0.55rem 1.1rem;
+  flex: 1;
+  min-width: 8rem;
+}
+
+.typing-game__tip {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+  line-height: 1.4;
+}
+
+.typing-game__passage {
+  font-size: clamp(1.35rem, 3.2vw, 2rem);
+  line-height: 1.65;
+  letter-spacing: 0.03em;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  border: 3px solid var(--border);
+  min-height: 8rem;
+  cursor: text;
+  user-select: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.typing-game__passage--bump {
+  animation: typing-game-passage-bump 0.28s ease;
+}
+
+@keyframes typing-game-passage-bump {
+  0% {
+    opacity: 0.65;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typing-game__ch {
+  border-radius: 4px;
+  padding: 0.1em 0.05em;
+}
+
+.typing-game__ch--todo {
+  color: var(--todo);
+}
+
+.typing-game__ch--ok {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.typing-game__ch--cur {
+  background: var(--cursor-bg);
+  color: var(--text);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.typing-game__ch--bad.typing-game__ch--cur {
+  color: var(--bad);
+  background: rgba(220, 80, 80, 0.2);
+  box-shadow: 0 0 0 2px var(--bad);
+}
+
+.typing-game__hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  opacity: 0;
+}

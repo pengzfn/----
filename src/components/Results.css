@@ -1,0 +1,80 @@
+.results {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.results__card {
+  width: 100%;
+  max-width: 28rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 3px solid var(--border);
+  padding: 2rem 1.75rem;
+  text-align: center;
+}
+
+.results__title {
+  font-size: clamp(1.85rem, 4vw, 2.35rem);
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+}
+
+.results__stage {
+  font-size: 1.25rem;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.results__stats {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  text-align: left;
+}
+
+.results__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.65rem 0;
+  border-bottom: 2px dashed var(--border);
+  font-size: 1.35rem;
+}
+
+.results__row:last-child {
+  border-bottom: none;
+}
+
+.results__label {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.results__value {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.results__encourage {
+  font-size: 1.3rem;
+  line-height: 1.45;
+  color: var(--accent-dark);
+  margin: 0 0 1.75rem;
+  font-weight: 700;
+}
+
+.results__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.results__btn {
+  font-size: 1.3rem;
+  width: 100%;
+}

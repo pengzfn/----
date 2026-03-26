@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f2f7ff;
+  --surface: #ffffff;
+  --text: #1b2b4a;
+  --muted: #5a6b85;
+  --border: #c8d7f0;
+  --track: #e3ecf8;
+  --accent: #3b82f6;
+  --accent2: #2563eb;
+  --accent-dark: #1d4ed8;
+  --ok: #16a34a;
+  --bad: #dc2626;
+  --todo: #94a3b8;
+  --cursor-bg: #fff7d6;
+  --easy: #22c55e;
+  --medium: #f59e0b;
+  --hard: #ef4444;
+  --radius: 18px;
+  --shadow: 0 8px 24px rgba(27, 43, 74, 0.12);
+  --shadow-hover: 0 12px 28px rgba(27, 43, 74, 0.18);
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: radial-gradient(ellipse 120% 80% at 50% -20%, #dbeafe 0%, var(--bg) 45%, #eef4ff 100%);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
